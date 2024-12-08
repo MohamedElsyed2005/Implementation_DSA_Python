@@ -1,10 +1,10 @@
 """
- 	Stack:
-	LIFO (last in first out) or FILO (first in last out)
-	Access, delete and insert are made at one end of the list called the top of the stack.
-	Insert called push or stacking.
-	Delete is called pop or unstacking.
-	All this manipulation with one pointer called stack pointer. Which points to the top element.
+Stack:
+     	LIFO (last in first out) or FILO (first in last out)
+     	Access, delete and insert are made at one end of the list called the top of the stack.
+     	Insert called push or stacking.
+     	Delete is called pop or unstacking.
+     	All this manipulation with one pointer called stack pointer. Which points to the top element.
 
 Basic operation on stack:
        o	Create: create an empty stack.
@@ -16,7 +16,7 @@ Basic operation on stack:
 Two types of errors are possible:
        o	Overflow: a push operation was applied to a full stack.
        o	Underflow: a pop operation was applied to an empty stack.
-       
+
 Operations:
        o	An array S of elements and size is max.
        o	An index top to element at top of stack.
