@@ -24,54 +24,62 @@ Operations:
 """
 
 class Stack:
-    # create operation 
+    """Implementation of a fixed-size stack."""
+
     def __init__(self, size):
+        """Create an empty stack with a fixed size."""
         self.size = size
-        self.S = [None] * size # [None, None, None ,None]
-        self.top = -1
+        self.S = [None] * size  # Initialize the stack with a fixed size
+        self.top = -1  # Initialize the stack pointer to -1
 
     def push(self, element):
-
+        """Insert an element on top of the stack."""
         if self.isFull():
             print("Stack overflow: Cannot push, the stack is full.")
             return
         self.top += 1
-        self.S [self.top] = element
-    
-    def pop(self):
+        self.S[self.top] = element
 
+    def pop(self):
+        """Retrieve and remove the top element of the stack."""
         if self.isEmpty():
             print("Stack underflow: Cannot pop, the stack is empty.")
-            return
+            return None
         element = self.S[self.top]
         self.S[self.top] = None
-        self.top -=1
+        self.top -= 1
         return element
-    
-    def isEmpty(self):
 
-        if self.top == -1:
-            return True
-        else: return False
-    
+    def isEmpty(self):
+        """Check if the stack is empty."""
+        return self.top == -1
+
     def isFull(self):
-        
-        if (self.top + 1) == self.size :
-            return True
-        else: return False
+        """Check if the stack is full."""
+        return self.top + 1 == self.size
+
+    def get_top(self):
+        """Return the top element without removing it."""
+        if self.isEmpty():
+            print("Stack is empty: Nothing to peek.")
+            return None
+        return self.S[self.top]
 
     def Display(self):
+        """Display the current stack contents."""
+        if self.isEmpty():
+            print("Stack is empty.")
+        else:
+            print("Stack contents:", self.S[:self.top + 1])
 
-        print("Stack contents:", self.S)
 
+# Example usage
 if __name__ == "__main__":
-
-    stack = Stack(4)
-    stack.push(2)
-    stack.pop()
+    stack = Stack(5)  # Create a stack with size 5
     stack.push(10)
     stack.push(20)
     stack.push(30)
-    stack.push(50)
-    stack.push(70)
-    stack.Display()
+    stack.Display()  # Output: [10, 20, 30]
+    print("Top element:", stack.get_top())
+    stack.pop()
+    stack.Display()  # Output: [10, 20]
