@@ -25,11 +25,11 @@ Operations:
 
 class Stack:
     """Implementation of a fixed-size stack."""
-
+    # constructor __name__ magic method
     def __init__(self, size):
         """Create an empty stack with a fixed size."""
         self.size = size
-        self.S = [None] * size  # Initialize the stack with a fixed size
+        self.S = [None] * size # if size = 4 [None, None, None, None] ==> Initialize the stack with a fixed size
         self.top = -1  # Initialize the stack pointer to -1
 
     def push(self, element):
@@ -70,7 +70,7 @@ class Stack:
         if self.isEmpty():
             print("Stack is empty.")
         else:
-            print("Stack contents:", self.S[:self.top + 1])
+            print("Stack contents:", self.S[:self.top + 1]) 
 
 
 # Example usage

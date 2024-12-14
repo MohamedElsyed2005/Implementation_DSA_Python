@@ -23,7 +23,8 @@ def isValid(s):
                 return False  # Mismatch case
         else:
             stack.push(char)
-
+    
+    stack.Display()
     return stack.isEmpty()  # Balanced if stack is empty
 
 if __name__ == '__main__':
