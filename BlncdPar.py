@@ -1,4 +1,4 @@
-from Stack import Stack
+from Data_structure.Linear_list.Stack import Stack
 
 """
 Check for balancing of parentheses, brackets, and braces.
@@ -26,8 +26,10 @@ def isValid(s):
         else:
             return "illegal char in input"
     
-    stack.Display()
-    return "properly Nested stucture"  # Balanced if stack is empty
+    if not stack.isEmpty():
+        return "Not Balanced"
+    else:
+        return "properly Nested stucture"  # Balanced if stack is empty
 
 if __name__ == '__main__':
     s = input("Enter your text: ")

@@ -1,4 +1,4 @@
-from Stack import Stack
+from Data_structure.Linear_list.Stack import Stack
 
 def invert_string(input_string):
     stack = Stack(80)
